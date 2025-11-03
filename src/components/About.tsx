@@ -15,12 +15,16 @@ const About = () => {
             About Me
           </h2>
           
-          <div className="bg-card rounded-2xl p-8 shadow-[var(--shadow-card)] mb-12">
-            <p className="text-lg text-card-foreground leading-relaxed">
-              Results-driven Full Stack Web Developer with 3+ years of experience building and optimizing 
-              high-performance websites. Skilled in Shopify, WordPress, and CMS development with a focus on 
-              SEO, UX, and performance. Passionate about creating digital experiences that not only look 
-              stunning but also drive real business results.
+          <div className="bg-card rounded-2xl p-8 shadow-[var(--shadow-glow)] mb-12 border border-border animate-fade-in-up hover:shadow-[var(--shadow-intense)] transition-all duration-500">
+            <p className="text-lg text-card-foreground leading-relaxed mb-4">
+              I'm Arbaz Khan, a passionate Web Developer with over 3+ years of experience in creating functional, 
+              visually appealing, and user-friendly websites. Specializing in Shopify, WordPress, and CMS development, 
+              I focus on delivering high-performing, secure, and tailored digital solutions that align with client needs 
+              and business goals.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              My expertise lies in front-end and back-end development, code optimization, and enhancing user experiences. 
+              I'm dedicated to creating digital experiences that not only look stunning but also drive real business results.
             </p>
           </div>
           
@@ -28,11 +32,14 @@ const About = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="bg-card rounded-xl p-6 text-center hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1"
+                className="bg-card rounded-xl p-6 text-center hover:shadow-[var(--shadow-intense)] transition-all duration-500 hover:-translate-y-2 border border-border animate-slide-in-up group"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <stat.icon className="w-12 h-12 mx-auto mb-4 text-accent" />
-                <div className="text-3xl font-bold mb-2 text-card-foreground">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 group-hover:animate-pulse-glow">
+                  <stat.icon className="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{stat.value}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

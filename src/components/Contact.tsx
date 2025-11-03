@@ -23,9 +23,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: MapPin, text: "Karachi, Pakistan" },
+    { icon: MapPin, text: "North Karachi, Karachi, Pakistan" },
     { icon: Mail, text: "hearbaz@gmail.com", link: "mailto:hearbaz@gmail.com" },
-    { icon: Phone, text: "+92 318 2887509", link: "tel:+923182887509" },
+    { icon: Phone, text: "+92 318 2887509, +92 328 2864484", link: "tel:+923182887509" },
   ];
 
   const socialLinks = [
@@ -34,22 +34,32 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground">
-          Let's Work Together
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">
-          Have a project in mind? Let's build something amazing together.
-        </p>
+    <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-primary rounded-full blur-3xl animate-pulse-glow"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Let's Work Together
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Have a project in mind? Let's build something amazing together.
+          </p>
+        </div>
         
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+          <div className="animate-slide-in-left">
             <h3 className="text-2xl font-semibold mb-6 text-foreground">Get in Touch</h3>
             <div className="space-y-4 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-3 text-muted-foreground">
-                  <info.icon className="w-5 h-5 text-accent" />
+                <div key={index} className="flex items-center gap-3 text-muted-foreground group">
+                  <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <info.icon className="w-5 h-5 text-accent" />
+                  </div>
                   {info.link ? (
                     <a href={info.link} className="hover:text-accent transition-colors">
                       {info.text}
@@ -68,7 +78,7 @@ const Contact = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-card p-3 rounded-lg hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1"
+                  className="bg-card p-3 rounded-lg hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:-translate-y-1 border border-border"
                   aria-label={social.label}
                 >
                   <social.icon className="w-6 h-6 text-accent" />
@@ -77,7 +87,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-card)]">
+          <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-glow)] border border-border animate-slide-in-right">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-card-foreground">
@@ -120,7 +130,7 @@ const Contact = () => {
                 />
               </div>
               
-              <Button type="submit" variant="hero" size="lg" className="w-full">
+              <Button type="submit" variant="hero" size="lg" className="w-full animate-pulse-glow">
                 Send Message
               </Button>
             </form>
