@@ -20,13 +20,13 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground">
-            Hi, I'm <span className="bg-gradient-to-r from-accent to-accent/60 bg-clip-text text-transparent">Arbaz Khan</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+            Hi, I'm <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">Arbaz Khan</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl mb-4 text-primary-foreground/90">
+          <h2 className="text-2xl md:text-3xl mb-4 text-white/95 drop-shadow-md">
             Website Developer & Ecommerce Specialist
           </h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/80">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/90 drop-shadow-md">
             I craft fast, responsive, and conversion-focused websites using Shopify, WordPress & custom code.
           </p>
           
@@ -50,7 +50,7 @@ const Hero = () => {
         
         <button
           onClick={() => scrollToSection("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/60 hover:text-white transition-colors"
           aria-label="Scroll to about section"
         >
           <ArrowDown size={32} />
